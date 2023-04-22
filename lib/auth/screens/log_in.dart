@@ -1,13 +1,11 @@
 import 'package:chat_app/auth/screens/forgot_password.dart';
 import 'package:chat_app/auth/screens/sign_up.dart';
 import 'package:chat_app/auth/widgets/custom_button.dart';
-// import 'package:chat_app/auth/widgets/facebook_button.dart';
 import 'package:chat_app/auth/widgets/faded_overlay.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/sign_in.dart';
 import '../widgets/email_input.dart';
-// import '../widgets/google_button.dart';
 import '../widgets/password_input.dart';
 
 class SignIn extends StatelessWidget {
