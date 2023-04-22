@@ -8,7 +8,12 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
-List<String> react = ["❤", "😯", "😆", "😢", "😠", "👍"];
+List<String> react = [
+  "❤",
+  "😆",
+  "😢",
+  "😠",
+];
 
 class MessageWidget extends StatefulWidget {
   const MessageWidget({
@@ -108,7 +113,7 @@ class _MessageWidgetState extends State<MessageWidget> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
-                        Text("Copy", style: TextStyle(fontSize: 16)),
+                        Text("Sao chép", style: TextStyle(fontSize: 16)),
                         Icon(Icons.copy),
                       ],
                     ),
@@ -132,7 +137,7 @@ class _MessageWidgetState extends State<MessageWidget> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: const [
-                      Text("Delete", style: TextStyle(fontSize: 16)),
+                      Text("Xóa", style: TextStyle(fontSize: 16)),
                       Icon(Icons.delete),
                     ],
                   ),
@@ -156,7 +161,7 @@ class _MessageWidgetState extends State<MessageWidget> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
-                        Text("Add contact", style: TextStyle(fontSize: 16)),
+                        Text("Thêm liên hệ", style: TextStyle(fontSize: 16)),
                         Icon(Icons.person_add_outlined),
                       ],
                     ),

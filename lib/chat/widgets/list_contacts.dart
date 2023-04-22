@@ -43,7 +43,7 @@ class _ListContactState extends State<ListContact> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Contacts", style: TextStyle(color: Colors.black)),
+        title: const Text("Liên hệ", style: TextStyle(color: Colors.black)),
         backgroundColor: Colors.white,
         centerTitle: true,
         leading: IconButton(

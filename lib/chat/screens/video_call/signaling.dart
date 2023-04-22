@@ -9,8 +9,9 @@ class Signaling {
     'iceServers': [
       {
         'urls': [
-          'stun:stun1.l.google.com:19302',
-          'stun:stun2.l.google.com:19302'
+          'stun:stun2.l.google.com:19302',
+
+          ///được sử dụng như một địa chỉ STUN server trong các ứng dụng WebRTC (Web Real-Time Communication).
         ]
       }
     ]

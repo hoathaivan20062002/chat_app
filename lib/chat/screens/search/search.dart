@@ -44,7 +44,7 @@ class _SearchState extends State<Search> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Text(
-                "Search",
+                "Tìm kiếm",
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               SizedBox(

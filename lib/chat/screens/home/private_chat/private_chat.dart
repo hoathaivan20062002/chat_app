@@ -33,7 +33,7 @@ class _PrivateChatState extends State<PrivateChat> {
   void initState() {
     super.initState();
     // initRecorder();
-  // TODO: init controller
+    // TODO: init controller
   }
 
   // Future initRecorder() async {
@@ -55,7 +55,6 @@ class _PrivateChatState extends State<PrivateChat> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -70,7 +69,12 @@ class _PrivateChatState extends State<PrivateChat> {
           },
         ),
         title: _FriendTitle(chatController.userController),
-        actions: [const _CallButton(), const _VideoCallButton(), Obx(() => _FriendOptionButton(chatController.userController.userData['name']))],
+        actions: [
+          const _CallButton(),
+          const _VideoCallButton(),
+          Obx(() => _FriendOptionButton(
+              chatController.userController.userData['name']))
+        ],
       ),
       body: WillPopScope(
         onWillPop: () {
@@ -87,7 +91,9 @@ class _PrivateChatState extends State<PrivateChat> {
             Align(
               alignment: Alignment.bottomCenter,
               child: SizedBox(
-                height: isKeyboardShown ? MediaQuery.of(context).size.height * 0.4 : 70,
+                height: isKeyboardShown
+                    ? MediaQuery.of(context).size.height * 0.4
+                    : 70,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -96,7 +102,8 @@ class _PrivateChatState extends State<PrivateChat> {
                         SizedBox(
                           width: MediaQuery.of(context).size.width - 60,
                           child: Card(
-                            margin: const EdgeInsets.only(left: 2, right: 2, bottom: 8),
+                            margin: const EdgeInsets.only(
+                                left: 2, right: 2, bottom: 8),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(25),
                             ),
@@ -108,7 +115,8 @@ class _PrivateChatState extends State<PrivateChat> {
                               minLines: 1,
                               onTap: () {
                                 if (isKeyboardShown) {
-                                  setState(() => isKeyboardShown = !isKeyboardShown);
+                                  setState(
+                                      () => isKeyboardShown = !isKeyboardShown);
                                 }
                               },
                               onChanged: (value) {
@@ -120,11 +128,13 @@ class _PrivateChatState extends State<PrivateChat> {
                               },
                               decoration: InputDecoration(
                                 border: InputBorder.none,
-                                hintText: "Type a message",
+                                hintText: "Nhắn tin",
                                 hintStyle: const TextStyle(color: Colors.grey),
                                 prefixIcon: IconButton(
                                   icon: Icon(
-                                    isKeyboardShown ? Icons.keyboard : Icons.emoji_emotions_outlined,
+                                    isKeyboardShown
+                                        ? Icons.keyboard
+                                        : Icons.emoji_emotions_outlined,
                                   ),
                                   onPressed: () {
                                     if (!isKeyboardShown) {
@@ -133,7 +143,8 @@ class _PrivateChatState extends State<PrivateChat> {
                                     } else {
                                       _focusNode.requestFocus();
                                     }
-                                    setState(() => isKeyboardShown = !isKeyboardShown);
+                                    setState(() =>
+                                        isKeyboardShown = !isKeyboardShown);
                                   },
                                 ),
                                 suffixIcon: Row(
@@ -143,10 +154,10 @@ class _PrivateChatState extends State<PrivateChat> {
                                       icon: const Icon(Icons.attach_file),
                                       onPressed: () {
                                         showModalBottomSheet(
-                                          backgroundColor: Colors.transparent,
-                                          context: context,
-                                          builder: (builder) => const bs.BottomSheet()
-                                        );
+                                            backgroundColor: Colors.transparent,
+                                            context: context,
+                                            builder: (builder) =>
+                                                const bs.BottomSheet());
                                       },
                                     ),
                                     IconButton(
@@ -177,7 +188,7 @@ class _PrivateChatState extends State<PrivateChat> {
                                 //     : (recorder.isRecording
                                 //         ? Icons.stop
                                 //         : Icons.mic),
-                                color: Colors.white,
+                                color: Colors.black,
                               ),
                               onPressed: () {
                                 print(_textController.text);
@@ -194,7 +205,9 @@ class _PrivateChatState extends State<PrivateChat> {
                     ),
                     Expanded(
                       flex: isKeyboardShown ? 1 : 0,
-                      child: isKeyboardShown ? _EmojiPicker(_textController) : Container(),
+                      child: isKeyboardShown
+                          ? _EmojiPicker(_textController)
+                          : Container(),
                     )
                   ],
                 ),
@@ -219,8 +232,8 @@ class _PrivateChatState extends State<PrivateChat> {
 }
 
 class _EmojiPicker extends StatelessWidget {
-  const _EmojiPicker(this.textController ,{Key? key}) : super(key: key);
-final TextEditingController? textController;
+  const _EmojiPicker(this.textController, {Key? key}) : super(key: key);
+  final TextEditingController? textController;
   @override
   Widget build(BuildContext context) {
     return EmojiPicker(
@@ -267,8 +280,10 @@ class _CallButton extends StatelessWidget {
       },
       icon: const Icon(
         FontAwesomeIcons.phone,
+
+        ///call
         size: 20,
-        color: Color.fromRGBO(34, 184, 190, 1),
+        color: Color.fromRGBO(52, 223, 29, 1),
       ),
     );
   }
@@ -284,9 +299,9 @@ class _VideoCallButton extends StatelessWidget {
         // TODO: VIDEO CALL FEATURE
       },
       icon: const Icon(
-        FontAwesomeIcons.video,
+        FontAwesomeIcons.video, // callvideo
         size: 20,
-        color: Color.fromRGBO(34, 184, 190, 1),
+        color: Color.fromRGBO(52, 223, 29, 1),
       ),
     );
   }
@@ -305,7 +320,11 @@ class _FriendOptionButton extends StatelessWidget {
     return PopupMenuItem<int>(
       value: index,
       child: Row(
-        children: [Icon(icon, color: color), const SizedBox(width: 7), Text(text)],
+        children: [
+          Icon(icon, color: color),
+          const SizedBox(width: 7),
+          Text(text)
+        ],
       ),
     );
   }
@@ -323,20 +342,20 @@ class _FriendOptionButton extends StatelessWidget {
       icon: const Icon(
         FontAwesomeIcons.ellipsisVertical,
         size: 20,
-        color: Color.fromRGBO(34, 184, 190, 1),
+        color: Color.fromRGBO(52, 223, 29, 1),
       ),
       itemBuilder: (context) {
         return [
           itemPopup(
             text: 'notifications'.tr,
             icon: FontAwesomeIcons.solidBell,
-            color: const Color.fromRGBO(59, 190, 253, 1),
+            color: const Color.fromRGBO(52, 223, 29, 1),
             index: 0,
           ),
           itemPopup(
             text: 'chat_color'.tr,
             icon: FontAwesomeIcons.palette,
-            color: const Color.fromRGBO(26, 191, 185, 1),
+            color: const Color.fromRGBO(52, 223, 29, 1),
             index: 1,
           ),
           itemPopup(
@@ -374,7 +393,10 @@ class _FriendTitle extends StatelessWidget {
             Obx(() => Text(
                   controller.userData['name'],
                   overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 15),
+                  style: const TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15),
                 )),
             const SizedBox(height: 5),
             Row(
@@ -392,7 +414,11 @@ class _FriendTitle extends StatelessWidget {
                 Expanded(
                     child: Obx(() => Align(
                         alignment: Alignment.centerLeft,
-                        child: AutoSizeText(controller.userData['is_active'] ? 'active'.tr : fromLastSeen(controller.userData['last_seen']),
+                        child: AutoSizeText(
+                            controller.userData['is_active']
+                                ? 'active'.tr
+                                : fromLastSeen(
+                                    controller.userData['last_seen']),
                             style: const TextStyle(color: Colors.grey),
                             presetFontSizes: const [12, 10, 8, 6, 4],
                             maxLines: 1,
@@ -404,4 +430,3 @@ class _FriendTitle extends StatelessWidget {
     ]);
   }
 }
-

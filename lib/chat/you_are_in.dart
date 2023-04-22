@@ -129,9 +129,11 @@ class _YouAreInState extends State<YouAreIn> with WidgetsBindingObserver {
                 },
                 child: Icon(
                   currentTab == 0
-                      ? FontAwesomeIcons.solidComment
+                      ? FontAwesomeIcons.solidComment  /// trò chuyện
                       : FontAwesomeIcons.comment,
-                  color: currentTab == 0 ? Colors.green : Colors.grey,
+                  color: currentTab == 0
+                      ? Color.fromARGB(255, 25, 255, 55)
+                      : Colors.black,
                   size: 25,
                 ),
               ),
@@ -142,9 +144,11 @@ class _YouAreInState extends State<YouAreIn> with WidgetsBindingObserver {
                 },
                 child: Icon(
                   currentTab == 1
-                      ? FontAwesomeIcons.users
-                      : FontAwesomeIcons.users,
-                  color: currentTab == 1 ? Colors.green : Colors.grey,
+                      ? FontAwesomeIcons.userFriends  /// bạn bè
+                      : FontAwesomeIcons.userFriends,
+                  color: currentTab == 1
+                      ? Color.fromARGB(255, 25, 255, 55)
+                      : Colors.black,
                   size: 25,
                 ),
               ),
@@ -155,9 +159,11 @@ class _YouAreInState extends State<YouAreIn> with WidgetsBindingObserver {
                 },
                 child: Icon(
                   currentTab == 2
-                      ? FontAwesomeIcons.solidUser
-                      : FontAwesomeIcons.user,
-                  color: currentTab == 2 ? Colors.green : Colors.grey,
+                      ? FontAwesomeIcons.cog  /// cài đặt
+                      : FontAwesomeIcons.cog,
+                  color: currentTab == 2
+                      ? Color.fromARGB(255, 25, 255, 55)
+                      : Colors.black,
                   size: 25,
                 ),
               )

@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:collection';
-
 import 'package:chat_app/chat/controllers/user_item.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -14,8 +13,8 @@ class FriendsListController extends GetxController {
     return _inst!;
   }
 
-  FriendsListController._internal(){
-        getCachedFriendsMap().then((_) {
+  FriendsListController._internal() {
+    getCachedFriendsMap().then((_) {
       listenForChanges();
     });
   }
@@ -24,29 +23,30 @@ class FriendsListController extends GetxController {
 
   StreamSubscription<QuerySnapshot<Map<String, dynamic>>>? listener;
 
-  String get currentUserId =>FirebaseAuth.instance.currentUser!.uid;
+  String get currentUserId => FirebaseAuth.instance.currentUser!.uid;
 
   CollectionReference<Map<String, dynamic>> get friendsCollectionRef {
-    return FirebaseFirestore.instance.collection('users/$currentUserId/friends');
+    return FirebaseFirestore.instance
+        .collection('users/$currentUserId/friends');
   }
 
   Future<void> getCachedFriendsMap() async {
-    var friendsSnapshot = await friendsCollectionRef.get(const GetOptions(source: Source.cache));
+    var friendsSnapshot =
+        await friendsCollectionRef.get(const GetOptions(source: Source.cache));
     for (var doc in friendsSnapshot.docs) {
       friendsMap.value[doc.id] = doc.data();
     }
     friendsMap.refresh();
   }
 
-  void resumeRealTime(){
+  void resumeRealTime() {
     print('friendslist controller listening');
     listener?.resume();
   }
 
-  void pauseRealTime(){
+  void pauseRealTime() {
     print('friendslist controller pause listening');
     listener?.pause();
-    
   }
 
   // purpose: notify app about adding friend, removing friend

@@ -31,8 +31,10 @@ class Friends extends StatelessWidget {
             shape: BoxShape.circle,
             gradient: LinearGradient(
               colors: [
-                Color.fromRGBO(26, 157, 196, 1),
-                Color.fromRGBO(21, 201, 179, 1)
+                Color.fromRGBO(67, 243, 105, 1),
+
+                /// nút thêm  trong trò chuyện
+                Color.fromRGBO(209, 233, 105, 1)
               ],
             ),
           ),
@@ -49,7 +51,7 @@ class Friends extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           const Text(
-            "Friends",
+            "Bạn bè",
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
           SizedBox(
@@ -200,7 +202,7 @@ class Friends extends StatelessWidget {
               },
               icon: const Icon(
                 FontAwesomeIcons.phone,
-                color: Color.fromRGBO(77, 189, 204, 1),
+                color: Color.fromRGBO(34, 235, 44, 1),
                 size: 20,
               ),
             ),
@@ -217,7 +219,7 @@ class Friends extends StatelessWidget {
               },
               icon: const Icon(
                 FontAwesomeIcons.comment,
-                color: Color.fromRGBO(77, 189, 204, 1),
+                color: Color.fromRGBO(34, 235, 44, 1),
                 size: 20,
               ),
             )

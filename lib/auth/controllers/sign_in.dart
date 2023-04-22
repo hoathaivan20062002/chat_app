@@ -1,16 +1,16 @@
 import 'dart:async';
 
 import 'package:chat_app/auth/screens/verify_page.dart';
-import 'package:chat_app/chat/services/user.dart';
+// import 'package:chat_app/chat/services/user.dart';
 import 'package:chat_app/chat/you_are_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../utils.dart';
-import '../screens/sign_in.dart';
+import '../screens/log_in.dart';
 import '../screens/sign_up.dart';
 import '../services/auth.dart';
-import '../services/facebook_auth.dart';
+// import '../services/facebook_auth.dart';
 import '../widgets/faded_overlay.dart';
 import '../widgets/send_verification_link_button.dart';
 
@@ -41,21 +41,8 @@ class SignInController extends GetxController {
   var emailErrorText = Rx<String?>(null);
   //#endregion
 
-  //#region PHONE NUMBER
-  // var phoneNumber = ''.obs;
-  // RegExp phoneRegex = RegExp(r'^[0-9]{10}');
-  // String? phoneNumberValidator() {
-  //   if (!phoneRegex.hasMatch(phoneNumber.value)) {
-  //     return 'Please enter a 10 digits phone number!';
-  //   }
 
-  //   return null;
-  // }
 
-  // var phoneNumberErrorText = Rx<String?>(null);
-  //#endregion
-
-  //#region PASSWORD
   var password = ''.obs;
   // Minimum eight characters, at least one letter and one number:
   RegExp passwordRegex = RegExp(r'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$');
@@ -136,8 +123,8 @@ class SignInController extends GetxController {
         return;
       }
 
-      await FbAuth.originalInst?.linkCredentials(email.value);
-      updateToken();
+      // await FbAuth.originalInst?.linkCredentials(email.value);
+      // updateToken();
 
       Get.to(() => const YouAreIn());
     } on FirebaseAuthException catch (e) {

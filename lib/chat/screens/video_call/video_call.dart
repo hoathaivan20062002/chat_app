@@ -306,7 +306,7 @@ class _VideoCallState extends State<VideoCall> {
               onPressed: () {
                 signaling.openUserMedia(_localRenderer, _remoteRenderer);
               },
-              child: const Text("Open camera & microphone"),
+              child: const Text("Mở máy ảnh & micrô"),
             ),
             const SizedBox(
               width: 8,
@@ -317,7 +317,7 @@ class _VideoCallState extends State<VideoCall> {
                 textEditingController.text = roomId!;
                 setState(() {});
               },
-              child: const Text("Create room"),
+              child: const Text("Tạo phòng"),
             ),
             const SizedBox(
               width: 8,
@@ -330,7 +330,7 @@ class _VideoCallState extends State<VideoCall> {
                   _remoteRenderer,
                 );
               },
-              child: const Text("Join room"),
+              child: const Text("Vào phòng"),
             ),
             const SizedBox(
               width: 8,

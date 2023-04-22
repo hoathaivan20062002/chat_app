@@ -34,7 +34,7 @@ class BottomSheetFile extends StatelessWidget {
                   iconCreation(
                     Icons.insert_drive_file,
                     Colors.indigo,
-                    "Document",
+                    "Tài liệu",
                     () async {
                       Get.back();
                       FilePickerResult? result = await FilePicker.platform
@@ -64,7 +64,7 @@ class BottomSheetFile extends StatelessWidget {
                   iconCreation(
                     Icons.camera_alt,
                     Colors.pink,
-                    "Camera",
+                    "Máy ảnh",
                     () async {
                       Get.back();
                       try {
@@ -88,7 +88,7 @@ class BottomSheetFile extends StatelessWidget {
                   iconCreation(
                     Icons.insert_photo,
                     Colors.purple,
-                    "Gallery",
+                    "Hình ảnh",
                     () async {
                       Get.back();
                       try {
@@ -119,7 +119,7 @@ class BottomSheetFile extends StatelessWidget {
                   iconCreation(
                     Icons.headset,
                     Colors.orange,
-                    "Audio",
+                    "Âm thanh",
                     () async {
                       Get.back();
                       FilePickerResult? result =
@@ -151,14 +151,14 @@ class BottomSheetFile extends StatelessWidget {
                   iconCreation(
                     Icons.location_pin,
                     Colors.teal,
-                    "Location",
+                    "Vị trí",
                     () {},
                   ),
                   const SizedBox(width: 40),
                   iconCreation(
                     Icons.person,
                     Colors.blue,
-                    "Contact",
+                    "Liên hệ",
                     () {
                       Get.back();
                       Get.to(ListContact(chatRoom: chatRoom));

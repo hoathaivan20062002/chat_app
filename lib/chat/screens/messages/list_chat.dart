@@ -34,7 +34,7 @@ class ListChat extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           const Text(
-            "Chat",
+            "Trò chuyện",
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
           SizedBox(
@@ -263,32 +263,32 @@ class ListChat extends StatelessWidget {
                 ],
               ),
             ),
-            InkWell(
-              onTap: () => platform.invokeMethod('showBubbleChat'),
-              child: Row(
-                children: const [
-                  Icon(
-                    FontAwesomeIcons.circle,
-                    color: Color.fromRGBO(255, 113, 150, 1),
-                  ),
-                  SizedBox(width: 15),
-                  Text(
-                    'Bong bóng chat',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            // InkWell(
+            //   onTap: () => platform.invokeMethod('showBubbleChat'),
+            //   child: Row(
+            //     children: const [
+            //       Icon(
+            //         FontAwesomeIcons.circle,
+            //         color: Color.fromRGBO(255, 113, 150, 1),
+            //       ),
+            //       SizedBox(width: 15),
+            //       Text(
+            //         'Bong bóng chat',
+            //         style: TextStyle(
+            //           fontSize: 16,
+            //           fontWeight: FontWeight.bold,
+            //         ),
+            //       ),
+            //     ],
+            //   ),
+            // ),
             InkWell(
               onTap: () => showDialogDelete(chatRoom),
               child: Row(
                 children: const [
                   Icon(
                     FontAwesomeIcons.trash,
-                    color: Color.fromRGBO(255, 113, 150, 1),
+                    color: Color.fromRGBO(248, 5, 5, 1),
                   ),
                   SizedBox(width: 15),
                   Text(
@@ -307,7 +307,7 @@ class ListChat extends StatelessWidget {
                 children: const [
                   Icon(
                     FontAwesomeIcons.ban,
-                    color: Color.fromRGBO(252, 177, 188, 1),
+                    color: Color.fromRGBO(216, 44, 44, 1),
                   ),
                   SizedBox(width: 15),
                   Text(

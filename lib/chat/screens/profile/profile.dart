@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:chat_app/auth/screens/sign_in.dart';
+import 'package:chat_app/auth/screens/log_in.dart';
 import 'package:chat_app/chat/screens/about.dart';
 import 'package:chat_app/chat/screens/profile/edit_profile.dart';
 import 'package:chat_app/auth/widgets/custom_button.dart';
