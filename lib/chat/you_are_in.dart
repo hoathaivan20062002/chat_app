@@ -97,16 +97,7 @@ class _YouAreInState extends State<YouAreIn> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
-    // if (_isLoading) {
-    //   return const Scaffold(
-    //     body: Center(
-    //       child: SizedBox(
-    //         width: 100,
-    //         child: LoadingIndicator(indicatorType: Indicator.ballPulseRise),
-    //       ),
-    //     ),
-    //   );
-    // }
+
 
     return Scaffold(
       body: PageStorage(
@@ -129,7 +120,7 @@ class _YouAreInState extends State<YouAreIn> with WidgetsBindingObserver {
                 },
                 child: Icon(
                   currentTab == 0
-                      ? FontAwesomeIcons.solidComment  /// trò chuyện
+                      ? FontAwesomeIcons.solidComment  /// trò chuyện icon tasbar
                       : FontAwesomeIcons.comment,
                   color: currentTab == 0
                       ? Color.fromARGB(255, 25, 255, 55)
@@ -144,7 +135,7 @@ class _YouAreInState extends State<YouAreIn> with WidgetsBindingObserver {
                 },
                 child: Icon(
                   currentTab == 1
-                      ? FontAwesomeIcons.userFriends  /// bạn bè
+                      ? FontAwesomeIcons.userFriends  /// bạn bè icon tasbar
                       : FontAwesomeIcons.userFriends,
                   color: currentTab == 1
                       ? Color.fromARGB(255, 25, 255, 55)
@@ -159,7 +150,7 @@ class _YouAreInState extends State<YouAreIn> with WidgetsBindingObserver {
                 },
                 child: Icon(
                   currentTab == 2
-                      ? FontAwesomeIcons.cog  /// cài đặt
+                      ? FontAwesomeIcons.cog  /// cài đặt icon tasbar
                       : FontAwesomeIcons.cog,
                   color: currentTab == 2
                       ? Color.fromARGB(255, 25, 255, 55)
