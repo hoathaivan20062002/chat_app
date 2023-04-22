@@ -76,7 +76,7 @@ class _OptionChatState extends State<OptionChat> {
             icon: checkNotify
                 ? FontAwesomeIcons.bellSlash
                 : FontAwesomeIcons.solidBell,
-            color: const Color.fromRGBO(59, 190, 253, 1),
+            color: Color.fromARGB(255, 21, 4, 250),
             index: 0,
           ),
           itemPopup(
