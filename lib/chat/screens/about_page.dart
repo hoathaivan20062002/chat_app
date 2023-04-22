@@ -23,7 +23,7 @@ class AboutPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 40),
                   const Text(
-                    'ChatApp',
+                    'ChatApps',
                     style: TextStyle(
                       fontSize: 35,
                       fontWeight: FontWeight.bold,

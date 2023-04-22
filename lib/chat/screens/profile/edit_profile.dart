@@ -118,8 +118,8 @@ class _EditProfileState extends State<EditProfile> {
                           border: Border.all(color: Colors.white),
                         ),
                         child: const Icon(
-                          FontAwesomeIcons.circlePlus,
-                          color: Colors.blue,
+                          FontAwesomeIcons.circlePlus, // icon thay ảnh
+                          color: Color.fromARGB(255, 13, 247, 44),
                           size: 28,
                         ),
                       ),

@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
+/// title giao diện chat
 class TitleChat extends StatelessWidget {
   const TitleChat({Key? key, required this.chatRoom}) : super(key: key);
   final ChatRoom chatRoom;
@@ -47,8 +48,10 @@ class TitleChat extends StatelessWidget {
                 },
                 icon: const Icon(
                   FontAwesomeIcons.phone,
+
+                  /// call icon
                   size: 20,
-                  color: Color.fromRGBO(34, 184, 190, 1),
+                  color: Color.fromRGBO(12, 243, 43, 1),
                 ),
               ),
               IconButton(
@@ -64,8 +67,10 @@ class TitleChat extends StatelessWidget {
                 },
                 icon: const Icon(
                   FontAwesomeIcons.video,
+
+                  ///video call icon
                   size: 20,
-                  color: Color.fromRGBO(34, 184, 190, 1),
+                  color: Color.fromRGBO(12, 243, 43, 1),
                 ),
               ),
               OptionChat(chatRoom: chatRoom),

@@ -15,7 +15,7 @@ Map<String, dynamic> emptyUserData() {
 }
 
 String defaultAvatar =
-    "https://firebasestorage.googleapis.com/v0/b/chatapp-d4407.appspot.com/o/avatar%2Favatar.jpg?alt=media&token=b7a309ac-0c1d-4650-813e-33dcad44fcfc";
+    "https://firebasestorage.googleapis.com/v0/b/chatapps-fe4b4.appspot.com/o/avatar%2Fkhanhdung.png?alt=media&token=174a3ce4-fee0-455e-8be8-ff5dd1fa52cb";
 
 Future<void> createNewUserData({String? name}) async {
   final users = FirebaseFirestore.instance.collection('users');

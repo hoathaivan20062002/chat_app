@@ -1,10 +1,8 @@
 import 'dart:async';
 import 'dart:collection';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-
 import 'user_item.dart';
 
 // empty chat: listen for currentUser's private_chats[withUser]
@@ -36,16 +34,21 @@ class PrivateChatController extends GetxController {
   RxMap<String, dynamic> chatContent = <String, dynamic>{}.obs;
 
   DocumentReference<Map<String, dynamic>> get preSavedChatDoc =>
-      FirebaseFirestore.instance.collection('users/$currentUserId/private_chats').doc(withUser);
+      FirebaseFirestore.instance
+          .collection('users/$currentUserId/private_chats')
+          .doc(withUser);
 
   Future<DocumentSnapshot<Map<String, dynamic>>> getPreSavedChatDoc() async {
     return await preSavedChatDoc.get();
   }
 
-  DocumentReference<Map<String, dynamic>> get existingChatDocRef => FirebaseFirestore.instance.collection('private_chats').doc(chatId);
+  DocumentReference<Map<String, dynamic>> get existingChatDocRef =>
+      FirebaseFirestore.instance.collection('private_chats').doc(chatId);
   //  open a chat with a user can be with a empty chat content
   Future<void> getCachedChat() async {
-    return existingChatDocRef.get(const GetOptions(source: Source.cache)).then((doc) {
+    return existingChatDocRef
+        .get(const GetOptions(source: Source.cache))
+        .then((doc) {
       chatContent(doc.data());
     }).catchError((e) {
       print(e);
@@ -103,23 +106,23 @@ class PrivateChatControllers {
   }
 
   HashMap<String, PrivateChatController> controllers = HashMap();
-   PrivateChatController getOrCreate(String uid){
+  PrivateChatController getOrCreate(String uid) {
     var foundController = controllers[uid];
 
-    if (foundController != null){
+    if (foundController != null) {
       foundController.resumeRealtime();
       return foundController;
-    } 
+    }
 
     controllers[uid] = PrivateChatController(uid);
     return controllers[uid]!;
   }
 
-  void pauseRealtime(String uid){
+  void pauseRealtime(String uid) {
     controllers[uid]?.pauseRealtime();
   }
 
-  void resumeRealtime(String uid){
+  void resumeRealtime(String uid) {
     controllers[uid]?.resumeRealtime();
   }
 }

@@ -14,16 +14,16 @@ class MyProfile extends StatelessWidget {
       children: [
         Text('hello'.tr),
         ProfilePicture(FirebaseAuth.instance.currentUser!.photoURL),
-        TextButton(
-          child: Text('Present lang is ${Get.locale}'),
-          onPressed: () {
-            if (Get.locale == const Locale('en', 'US')) {
-              Get.updateLocale(const Locale('vi', 'VN'));
-            } else {
-              Get.updateLocale(const Locale('en', 'US'));
-            }
-          },
-        ),
+        // TextButton(
+        //   child: Text('Present lang is ${Get.locale}'),
+        //   onPressed: () {
+        //     if (Get.locale == const Locale('en', 'US')) {
+        //       Get.updateLocale(const Locale('vi', 'VN'));
+        //     } else {
+        //       Get.updateLocale(const Locale('en', 'US'));
+        //     }
+        //   },
+        // ),
         const SignOutButton()
       ],
     ));

@@ -157,7 +157,7 @@ class _ChatState extends State<Chat> {
                     },
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      hintText: "Type a message",
+                      hintText: "Nhắn tin.......",
                       hintStyle: const TextStyle(color: Colors.grey),
                       prefixIcon: IconButton(
                         icon: Icon(
@@ -180,7 +180,7 @@ class _ChatState extends State<Chat> {
                             icon: const Icon(Icons.attach_file),
                             onPressed: () {
                               showModalBottomSheet(
-                                backgroundColor: Colors.transparent,
+                                backgroundColor: Colors.black,
                                 context: context,
                                 builder: (builder) => BottomSheetFile(
                                   chatRoom: widget.chatRoom,
@@ -188,26 +188,26 @@ class _ChatState extends State<Chat> {
                               );
                             },
                           ),
-                          IconButton(
-                            icon: const Icon(Icons.camera_alt),
-                            onPressed: () async {
-                              try {
-                                final image = await ImagePicker()
-                                    .pickImage(source: ImageSource.camera);
-                                if (image != null) {
-                                  List<String> link = [];
-                                  link.add(await uploadFile(
-                                      File(image.path),
-                                      "chats/${widget.chatRoom.id}/image",
-                                      "${DateFormat("yyyyMMddhhmmss").format(DateTime.now())}.${image.path.split('.').last}"));
-                                  sendMessages(
-                                    widget.chatRoom,
-                                    ContentMessages(activity: 2, image: link),
-                                  );
-                                }
-                              } on PlatformException catch (_) {}
-                            },
-                          ),
+                          // IconButton(
+                          //   icon: const Icon(Icons.camera_alt),
+                          //   onPressed: () async {
+                          //     try {
+                          //       final image = await ImagePicker()
+                          //           .pickImage(source: ImageSource.camera);
+                          //       if (image != null) {
+                          //         List<String> link = [];
+                          //         link.add(await uploadFile(
+                          //             File(image.path),
+                          //             "chats/${widget.chatRoom.id}/image",
+                          //             "${DateFormat("yyyyMMddhhmmss").format(DateTime.now())}.${image.path.split('.').last}"));
+                          //         sendMessages(
+                          //           widget.chatRoom,
+                          //           ContentMessages(activity: 2, image: link),
+                          //         );
+                          //       }
+                          //     } on PlatformException catch (_) {}
+                          //   },
+                          // ), // máy ảnh chỗ nhắn tin
                         ],
                       ),
                       contentPadding: const EdgeInsets.all(5),
@@ -223,7 +223,7 @@ class _ChatState extends State<Chat> {
                 ),
                 child: CircleAvatar(
                   radius: 25,
-                  backgroundColor: const Color(0xFF128C7E),
+                  backgroundColor: Color.fromARGB(255, 67, 252, 67),
                   child: IconButton(
                     icon: Icon(
                       sendButton

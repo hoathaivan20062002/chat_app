@@ -1,4 +1,4 @@
-import 'package:chat_app/auth/screens/sign_in.dart';
+import 'package:chat_app/auth/screens/log_in.dart';
 import 'package:chat_app/auth/screens/verify_page.dart';
 import 'package:chat_app/chat/screens/about_page.dart';
 import 'package:chat_app/chat/services/notification_services.dart';

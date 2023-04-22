@@ -59,8 +59,10 @@ class _OptionChatState extends State<OptionChat> {
       },
       icon: const Icon(
         FontAwesomeIcons.ellipsisVertical,
+
+        ///3 chấm trên góc chat
         size: 20,
-        color: Color.fromRGBO(34, 184, 190, 1),
+        color: Color.fromRGBO(49, 247, 82, 1),
       ),
       itemBuilder: (context) {
         bool checkUser =
@@ -80,31 +82,31 @@ class _OptionChatState extends State<OptionChat> {
           itemPopup(
             text: 'Biệt danh',
             icon: FontAwesomeIcons.penToSquare,
-            color: const Color.fromRGBO(59, 190, 253, 1),
+            color: Color.fromARGB(255, 51, 192, 180),
             index: 1,
           ),
-          itemPopup(
-            text: 'Màu sắc',
-            icon: FontAwesomeIcons.palette,
-            color: const Color.fromRGBO(26, 191, 185, 1),
-            index: 2,
-          ),
-          itemPopup(
-            text: 'Bong bóng chat',
-            icon: FontAwesomeIcons.circle,
-            color: const Color.fromRGBO(26, 191, 185, 1),
-            index: 3,
-          ),
+          // itemPopup(
+          //   text: 'Màu sắc',
+          //   icon: FontAwesomeIcons.palette,
+          //   color: const Color.fromRGBO(26, 191, 185, 1),
+          //   index: 2,
+          // ),
+          // itemPopup(
+          //   text: 'Bong bóng chat',
+          //   icon: FontAwesomeIcons.circle,
+          //   color: const Color.fromRGBO(26, 191, 185, 1),
+          //   index: 3,
+          // ),
           itemPopup(
             text: 'Xóa đoạn chat',
             icon: FontAwesomeIcons.trash,
-            color: const Color.fromRGBO(255, 113, 150, 1),
+            color: Color.fromARGB(255, 255, 67, 67),
             index: 4,
           ),
           itemPopup(
             text: 'Chặn',
             icon: FontAwesomeIcons.ban,
-            color: const Color.fromRGBO(252, 177, 188, 1),
+            color: Color.fromARGB(255, 255, 72, 72),
             index: 5,
           ),
         ];

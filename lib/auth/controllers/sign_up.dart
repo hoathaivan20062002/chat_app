@@ -33,7 +33,7 @@ class SignUpController extends GetxController {
 
   String? emailValidator() {
     if (!SignInController.inst.emailRegex.hasMatch(email.value)) {
-      return 'Vui lòng nhập email hợp lệ!';
+      return 'Vui lòng nhập Gmail hợp lệ!';
     }
 
     return null;
@@ -54,7 +54,7 @@ class SignUpController extends GetxController {
 
   var passwordErrorText = Rx<String?>(null);
   final String passwordHint =
-      'Mật khẩu phải có ít nhất 8 ký tự, ít nhất một chữ cái và một chữ số';
+      'Mậtkhẩucó8chữvàsố'; ///gợi ý password
   //#endregion
 
   void validateAndSignUp() async {
@@ -73,7 +73,7 @@ class SignUpController extends GetxController {
 
     // validate email
     if (email.isEmpty) {
-      emailErrorText.value = 'Vui lòng nhập email của bạn!';
+      emailErrorText.value = 'Vui lòng nhập Gmail của bạn!';
       validationSuccess = false;
     } else {
       emailErrorText.value = emailValidator();
@@ -84,7 +84,7 @@ class SignUpController extends GetxController {
 
     // validate name
     if (name.isEmpty) {
-      nameErrorText.value = 'Vui lòng nhập tên của bạn';
+      nameErrorText.value = 'Vui lòng nhập tên của bạn!';
       validationSuccess = false;
     } else {
       nameErrorText.value = nameValidator();

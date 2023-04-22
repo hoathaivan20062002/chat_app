@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
 import '../../utils.dart';
-import '../screens/sign_in.dart';
+import '../screens/log_in.dart';
 import 'sign_in.dart';
 
 // TODO: IMPLEMENT SET NEW PASSWORD FORM TO ENSURE NEW PASSWORD FOLLOWING SIGN_IN_PASSWORD_REGEX

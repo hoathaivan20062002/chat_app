@@ -5,7 +5,13 @@ import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 
 class _IconCreator extends StatelessWidget {
-  const _IconCreator({required this.onTap, required this.color, required this.icon, required this.text, Key? key}) : super(key: key);
+  const _IconCreator(
+      {required this.onTap,
+      required this.color,
+      required this.icon,
+      required this.text,
+      Key? key})
+      : super(key: key);
   final Function() onTap;
   final Color color;
   final IconData icon;
@@ -50,37 +56,41 @@ class BottomSheet extends StatelessWidget {
                   _IconCreator(
                     icon: Icons.insert_drive_file,
                     color: Colors.indigo,
-                    text: "Document",
+                    text: "Tài liệu",
                     onTap: () async {
-                      FilePickerResult? result = await FilePicker.platform.pickFiles(allowMultiple: true);
+                      FilePickerResult? result = await FilePicker.platform
+                          .pickFiles(allowMultiple: true);
 
                       if (result != null) {
-                        List<File> files = result.paths.map((path) => File(path!)).toList();
+                        List<File> files =
+                            result.paths.map((path) => File(path!)).toList();
                       } else {
                         // User canceled the picker
                       }
                     },
                   ),
                   const SizedBox(width: 40),
-                  _IconCreator(
-                    icon: Icons.camera_alt,
-                    color: Colors.pink,
-                    text: "Camera",
-                    onTap: () async {
-                      try {
-                        final image = await ImagePicker().pickImage(source: ImageSource.camera);
-                        if (image != null) {}
-                      } on PlatformException catch (_) {}
-                    },
-                  ),
+                  // _IconCreator(
+                  //   icon: Icons.camera_alt,
+                  //   color: Colors.pink,
+                  //   text: "Máy ảnh",
+                  //   onTap: () async {
+                  //     try {
+                  //       final image = await ImagePicker()
+                  //           .pickImage(source: ImageSource.camera);
+                  //       if (image != null) {}
+                  //     } on PlatformException catch (_) {}
+                  //   },
+                  // ),
                   const SizedBox(width: 40),
                   _IconCreator(
                     icon: Icons.insert_photo,
-                    color: Colors.purple,
-                    text: "Gallery",
+                    color: Colors.blue,
+                    text: "Hình ảnh",
                     onTap: () async {
                       try {
-                        List<XFile>? images = await ImagePicker().pickMultiImage();
+                        List<XFile>? images =
+                            await ImagePicker().pickMultiImage();
                       } catch (_) {}
                     },
                   ),
@@ -92,17 +102,19 @@ class BottomSheet extends StatelessWidget {
                 children: [
                   _IconCreator(
                     icon: Icons.headset,
-                    color: Colors.orange,
-                    text: "Audio",
+                    color: Colors.red,
+                    text: "Âm thanh",
                     onTap: () async {
-                      FilePickerResult? result = await FilePicker.platform.pickFiles(
+                      FilePickerResult? result =
+                          await FilePicker.platform.pickFiles(
                         allowMultiple: true,
                         type: FileType.custom,
                         allowedExtensions: ['mp3', 'wav', 'aac'],
                       );
 
                       if (result != null) {
-                        List<File> files = result.paths.map((path) => File(path!)).toList();
+                        List<File> files =
+                            result.paths.map((path) => File(path!)).toList();
                       } else {
                         // User canceled the picker
                       }
@@ -111,15 +123,15 @@ class BottomSheet extends StatelessWidget {
                   const SizedBox(width: 40),
                   _IconCreator(
                     icon: Icons.location_pin,
-                    color: Colors.teal,
-                    text: "Location",
+                    color: Colors.orange,
+                    text: "Vị trí",
                     onTap: () {},
                   ),
                   const SizedBox(width: 40),
                   _IconCreator(
                     icon: Icons.person,
                     color: Colors.blue,
-                    text: "Contact",
+                    text: "Liên hệ",
                     onTap: () {},
                   ),
                 ],

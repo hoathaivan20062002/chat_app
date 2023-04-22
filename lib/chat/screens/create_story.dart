@@ -10,17 +10,22 @@ class CreateStory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(child:ElevatedButton(onPressed: _pickFile, child: Text('Pick file')));
+    return const Center(
+        child:
+            ElevatedButton(onPressed: _pickFile, child: Text('Chọn tập tin')));
   }
 }
 
-void _pickFile()async{
-  FilePickerResult? result = await FilePicker.platform.pickFiles(type: FileType.video,);
-  if (result != null){
+void _pickFile() async {
+  FilePickerResult? result = await FilePicker.platform.pickFiles(
+    type: FileType.video,
+  );
+  if (result != null) {
     File file = File(result.files.single.path!);
     final storageRef = FirebaseStorage.instance.ref();
-    final fileRef = storageRef.child("${FirebaseAuth.instance.currentUser!.uid}/${DateTime.now()}${p.extension(file.path)}");
-    
+    final fileRef = storageRef.child(
+        "${FirebaseAuth.instance.currentUser!.uid}/${DateTime.now()}${p.extension(file.path)}");
+
     await fileRef.putFile(file);
   }
 }
