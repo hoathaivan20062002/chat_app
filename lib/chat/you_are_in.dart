@@ -155,7 +155,7 @@ class _YouAreInState extends State<YouAreIn> with WidgetsBindingObserver {
                   color: currentTab == 2
                       ? Color.fromARGB(255, 25, 255, 55)
                       : Colors.black,
-                  size: 25,
+                  size: 24,
                 ),
               )
             ],
