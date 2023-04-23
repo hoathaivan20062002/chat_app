@@ -16,6 +16,8 @@ import io.flutter.plugin.common.MethodChannel
 class MainActivity: FlutterActivity() {
     private val CODE_DRAW_OVER_OTHER_APP_PERMISSION = 2084
     private val CHANNEL = "chat_app.flutter.dev/chatBubble"
+    ///Dòng đầu tiên khai báo hằng số CODE_DRAW_OVER_OTHER_APP_PERMISSION là một số nguyên có giá trị bằng 2084. Hằng số này có thể được sử dụng làm mã yêu cầu để xin quyền hiển thị nội dung của ứng dụng lên trên các ứng dụng khác trên hệ điều hành Android.
+    ///Dòng thứ hai khai báo hằng số CHANNEL là một chuỗi có giá trị bằng "chat_app.flutter.dev/chatBubble". Hằng số này có thể được sử dụng để định danh một kênh thông báo trong ứng dụng Android, là cách để nhóm và phân loại các thông báo dựa trên tính quan trọng và nội dung của chúng.
 
     override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
