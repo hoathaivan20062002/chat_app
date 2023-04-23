@@ -53,8 +53,7 @@ class SignUpController extends GetxController {
   }
 
   var passwordErrorText = Rx<String?>(null);
-  final String passwordHint =
-      'Mậtkhẩucó8chữvàsố'; ///gợi ý password
+  final String passwordHint = 'Mậtkhẩucó8chữvàsố'; ///gợi ý password
   //#endregion
 
   void validateAndSignUp() async {

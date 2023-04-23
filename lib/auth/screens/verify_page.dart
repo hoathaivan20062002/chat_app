@@ -107,7 +107,7 @@ class _VerifyPageState extends State<VerifyPage> {
                       },
                       icon: const Icon(FontAwesomeIcons.house),
                       label: const Text(
-                        "Đi đến trang chủ",
+                        "Vào ứng dụng",
                         style: TextStyle(fontSize: 16),
                       ),
                       style: ElevatedButton.styleFrom(

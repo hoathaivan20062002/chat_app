@@ -188,26 +188,26 @@ class _ChatState extends State<Chat> {
                               );
                             },
                           ),
-                          // IconButton(
-                          //   icon: const Icon(Icons.camera_alt),
-                          //   onPressed: () async {
-                          //     try {
-                          //       final image = await ImagePicker()
-                          //           .pickImage(source: ImageSource.camera);
-                          //       if (image != null) {
-                          //         List<String> link = [];
-                          //         link.add(await uploadFile(
-                          //             File(image.path),
-                          //             "chats/${widget.chatRoom.id}/image",
-                          //             "${DateFormat("yyyyMMddhhmmss").format(DateTime.now())}.${image.path.split('.').last}"));
-                          //         sendMessages(
-                          //           widget.chatRoom,
-                          //           ContentMessages(activity: 2, image: link),
-                          //         );
-                          //       }
-                          //     } on PlatformException catch (_) {}
-                          //   },
-                          // ), // máy ảnh chỗ nhắn tin
+                          IconButton(
+                            icon: const Icon(Icons.camera_alt),
+                            onPressed: () async {
+                              try {
+                                final image = await ImagePicker()
+                                    .pickImage(source: ImageSource.camera);
+                                if (image != null) {
+                                  List<String> link = [];
+                                  link.add(await uploadFile(
+                                      File(image.path),
+                                      "chats/${widget.chatRoom.id}/image",
+                                      "${DateFormat("yyyyMMddhhmmss").format(DateTime.now())}.${image.path.split('.').last}"));
+                                  sendMessages(
+                                    widget.chatRoom,
+                                    ContentMessages(activity: 2, image: link),
+                                  );
+                                }
+                              } on PlatformException catch (_) {}
+                            },
+                          ), // máy ảnh chỗ nhắn tin
                         ],
                       ),
                       contentPadding: const EdgeInsets.all(5),

@@ -3,7 +3,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:chat_app/chat/controllers/user_item.dart';
 import 'package:chat_app/chat/widgets/profile_picture.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutter_sound/flutter_sound.dart';
+// import 'package:flutter_sound/flutter_sound.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:get/get.dart';
@@ -128,7 +128,7 @@ class _PrivateChatState extends State<PrivateChat> {
                               },
                               decoration: InputDecoration(
                                 border: InputBorder.none,
-                                hintText: "Nhắn tin",
+                                hintText: "Nhắn tin...",
                                 hintStyle: const TextStyle(color: Colors.grey),
                                 prefixIcon: IconButton(
                                   icon: Icon(
@@ -347,25 +347,25 @@ class _FriendOptionButton extends StatelessWidget {
       itemBuilder: (context) {
         return [
           itemPopup(
-            text: 'notifications'.tr,
+            text: 'Thông báo'.tr,
             icon: FontAwesomeIcons.solidBell,
             color: const Color.fromRGBO(52, 223, 29, 1),
             index: 0,
           ),
           itemPopup(
-            text: 'chat_color'.tr,
+            text: 'Màu sắc'.tr,
             icon: FontAwesomeIcons.palette,
             color: const Color.fromRGBO(52, 223, 29, 1),
             index: 1,
           ),
           itemPopup(
-            text: 'delete_chat_history'.tr,
+            text: 'Xóa lịch sử trò chuyện'.tr,
             icon: FontAwesomeIcons.trash,
             color: const Color.fromRGBO(255, 113, 150, 1),
             index: 2,
           ),
           itemPopup(
-            text: '${'block'.tr} $friendName',
+            text: '${'Chặn'.tr} $friendName',
             icon: FontAwesomeIcons.ban,
             color: const Color.fromRGBO(252, 177, 188, 1),
             index: 3,
