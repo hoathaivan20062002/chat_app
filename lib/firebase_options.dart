@@ -36,7 +36,7 @@ class DefaultFirebaseOptions {
     authDomain: 'chatapps-fe4b4.firebaseapp.com',
     databaseURL: 'https://chatapps-fe4b4-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'chatapps-fe4b4.appspot.com',
-    // measurementId: 'G-S3Q75GK9S7',
+    measurementId: "G-5B4X9VLF61"
   );
 
   static const FirebaseOptions android = FirebaseOptions(
