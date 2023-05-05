@@ -12,7 +12,7 @@ String fromLastSeen(Timestamp lastSeen) {
   } else if (duration.inDays == 1) {
     shortDuration = duration.inDays;
     unit = 'day';
-  } 
+  }
   //
   else if (duration.inHours > 1) {
     shortDuration = duration.inHours;
@@ -20,7 +20,7 @@ String fromLastSeen(Timestamp lastSeen) {
   } else if (duration.inHours == 1) {
     shortDuration = duration.inHours;
     unit = 'hour';
-  } 
+  }
   //
   else if (duration.inMinutes >= 1) {
     shortDuration = duration.inMinutes;
@@ -28,7 +28,7 @@ String fromLastSeen(Timestamp lastSeen) {
   } else if (duration.inMinutes == 1) {
     shortDuration = duration.inMinutes;
     unit = 'minute';
-  } 
+  }
   //
   else {
     shortDuration = duration.inSeconds;

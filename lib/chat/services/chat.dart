@@ -9,7 +9,7 @@ import 'package:http/http.dart' as http;
 
 String baseURL = "https://fcm.googleapis.com/fcm/send";
 String serverKey =
-    "key=AAAANYN2Rpk:APA91bFUElye5nr-PaWEmRfbneag7JY4nVIU12hsuJ7P38t8H-h3KhGoqPKm2zq5gfuSJlyixGjBIMfD0zzdJYsCRz0RNpdRWSyZVGZUvc1dcFkTouisgT2j46pZ_oslfLrmvdLcZ4P9";
+    "key=AAAAlrQVh9I:APA91bEa7MgPKQknMTGsW-vvlyJgUpaFWhD10SO0-OKOHdc-Cq9gbzbmmfQowllTndRl1zap4yoWVzkNPleI0LDxILOs2hvEukBOdYcs3aZfyHXa858QK0Y_768lhefn2Q0tAOWE5_oM";
 // là một chuỗi được sử dụng trong ứng dụng Firebase Cloud Messaging (FCM) để xác định ứng dụng nhận thông báo.
 Future<String> findExistingPrivateChatId(String uid) async {
   String currentUserId = FirebaseAuth.instance.currentUser!.uid;
